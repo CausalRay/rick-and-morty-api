@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+*{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Roboto", sans-serif;
+}
+
+.schwifty {
+  font-family: "get_schwifty";
+  color: #35c9dd;
+  font-size: 40px;
+  font-weight: 900;
+  text-shadow: 0px 0px 2px #b1fd00cd, 0px 0px 2px #b1fd00cd,
+    0px 0px 2px #b1fd00cd, 0px 0px 2px #b1fd00cd;
+}
+
+@font-face {
+  font-family: "get_schwifty";
+  src: url(./assets/get_schwifty.ttf);
+}
+
+.row {
+  width:100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}

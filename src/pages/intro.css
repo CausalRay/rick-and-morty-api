@@ -1,0 +1,36 @@
+#IntroPage {
+background-image:
+linear-gradient(rgb(33, 33, 41) -250px, transparent),
+url('https://occ-0-4845-116.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABbErLExppe8cUGq5f2v-mNLfo7XnBiY5svjYVcjdc5VVlt8s9Y2IDcUhpdrR84sI70xywuyoWdu0Neme9v_AWlebuZBXoz9PHcaK.jpg?r=f61');
+background-repeat:no-repeat;
+width: 100%;
+background-size:100% 100%;
+height: calc(100vh - 70px);
+}
+
+.intropage__description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  padding-left: 20px;
+
+}
+
+.intro__container {
+  transform: translateY(110%);
+} 
+
+.intropage__description img {
+  width: 70%;
+}
+
+.intropage__para {
+  color: white;
+  margin-top: 20px;
+  font-size: 24px;
+  line-height: 1.7rem;
+}
+
+
+
