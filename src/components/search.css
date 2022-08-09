@@ -1,0 +1,101 @@
+#SearchPage {
+  height: 100vh;
+  position: relative;
+  background-image: url("https://images.hdqwalls.com/wallpapers/rick-and-morty-uy.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  animation: change 60s infinite ease-in-out;
+
+}
+
+.search__container {
+  padding: 30px 0;
+}
+
+.search__input--wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(40%);
+  padding: 50px;
+  border-radius: 30px;
+  position: relative;
+}
+
+.search__input--wrapper::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.534);
+  width: 100vw;
+  top: -47%;
+  height: 100vh;
+  z-index: -1;
+  position: absolute;
+}
+
+.search__input {
+  display: flex;
+  margin: 30px 0;
+  border: none;
+  background-color: white;
+  border-radius: 99px;
+  padding: 20px;
+  color: gray;
+}
+
+.search__input input {
+  width: 600px;
+  min-width: 400px;
+  outline: none;
+  border: none;
+  font-size: 32px;
+  padding-right: 20px;
+  color: gray;
+}
+
+.MuiSvgIcon-root {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.search__input--para h2 {
+  font-size: 48px;
+  margin: 12px;
+}
+
+.search__input--para h3 {
+  width: 100%;
+  max-width: 800px;
+  font-size: 30px;
+  color: white;
+  margin: 12px;
+}
+
+.search__input--para {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes change {
+  0% {
+    background-image: url("https://sm.ign.com/ign_ap/review/r/rick-and-m/rick-and-morty-season-5-premiere-mort-dinner-rick-andre-revi_kqg5.jpg");
+  }
+  20% {
+    background-image: url("https://wallpaperboat.com/wp-content/uploads/2019/04/rick-and-morty-wallpaper-portal-wallpaper-007.jpg");
+  }
+  40% {
+    background-image: url("https://images.hdqwalls.com/wallpapers/bthumb/rick-and-morty-uy.jpg");
+  }
+  60% {
+    background-image: url("https://bloody-disgusting.com/wp-content/uploads/2015/11/119091-rick-and-morty-rick-and-morty.jpg");
+  }
+  80% {
+    background-image: url("https://wallpapers.com/images/high/rick-and-morty-giant-rick-head-7rkxpp27b8aqbqnl.jpg");
+  }
+  100% {
+    background-image: url("https://sm.ign.com/ign_ap/review/r/rick-and-m/rick-and-morty-season-5-premiere-mort-dinner-rick-andre-revi_kqg5.jpg");
+  }
+}

@@ -1,0 +1,96 @@
+#About {
+    background-color: rgb(235, 217, 217);
+    height: 70vh;
+    position: relative;
+}
+
+
+.about__container {
+    padding-top: 50px;
+}
+
+.about__wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about__wrapper--left {
+    flex: 0.5;
+}
+
+.about__wrapper--img {
+  border-radius: 999px;
+  width: 100px;
+  height: 100px;
+  animation: orbit-reverse 25000ms linear infinite; 
+
+}
+
+.about__wrapper--right {
+    border:none;
+    height: 350px;
+    width: 350px;
+    position: absolute;
+    bottom: 30%;
+    right: 15%;
+    border-radius: 999px;
+    animation: orbit 25000ms linear infinite;
+
+}
+
+@keyframes orbit{
+    
+    0%{
+        transform: rotate(0);
+            }
+
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes orbit-reverse{
+    
+    0%{
+        transform: rotate(-360deg);
+            }
+
+    100%{
+        transform: rotate(0);
+    }
+}
+
+.beth {
+    bottom: 0;
+    right: 7%;
+
+}
+
+.jerry {
+    right: -10%;
+    top:23%;
+}
+
+.summer {
+    bottom: 0;
+    left: 7%;
+}
+
+.rick {
+    top: -10%;
+    left: 35%;
+
+}
+
+.morty {
+    left: -10%;
+    top: 22%;
+}
+
+.rick, 
+.morty,
+.summer,
+.jerry,
+.beth {
+    position: absolute;
+}

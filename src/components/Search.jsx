@@ -4,7 +4,7 @@ import SearchIcon from "@mui/icons-material/Search";
 
 const Search = () => {
   return (
-    <div className="search">
+    <div id="SearchPage">
       <div className="search__container">
         <div className="row">
           <div className="search__input--wrapper">
@@ -18,7 +18,7 @@ const Search = () => {
             <div className="search__input">
               <input
                 type="text"
-                placeholder="Search by name, species, home plant"
+                placeholder="Rick Sanchez, Human, C137"
               />
               <SearchIcon />
             </div>
