@@ -1,14 +1,17 @@
 #IntroPage {
 background-image:
-linear-gradient(to right, rgb(33, 33, 41) 200px, transparent),
+linear-gradient(to right, rgb(33, 33, 41), transparent),
 url('https://occ-0-4845-116.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABbErLExppe8cUGq5f2v-mNLfo7XnBiY5svjYVcjdc5VVlt8s9Y2IDcUhpdrR84sI70xywuyoWdu0Neme9v_AWlebuZBXoz9PHcaK.jpg?r=f61');
 filter:brightness(1.5);
 background-repeat:no-repeat;
 background-size:cover;
 background-attachment:fixed;
-height: calc(100vh - 70px);
+height: 100vh;
 background-position: 60%;
+overflow: hidden;
+
 }
+
 
 .intropage__description {
   display: flex;

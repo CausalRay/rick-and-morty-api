@@ -6,7 +6,7 @@
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
-  animation: change 60s infinite ease-in-out;
+  animation: change 50s infinite ease-in-out;
 
 }
 
@@ -34,25 +34,9 @@
   position: absolute;
 }
 
-.search__input {
-  display: flex;
-  margin: 30px 0;
-  border: none;
-  background-color: white;
-  border-radius: 99px;
-  padding: 20px;
-  color: gray;
-}
 
-.search__input input {
-  width: 600px;
-  min-width: 400px;
-  outline: none;
-  border: none;
-  font-size: 32px;
-  padding-right: 20px;
-  color: gray;
-}
+
+
 
 .MuiSvgIcon-root {
   width: 40px !important;
@@ -60,7 +44,7 @@
 }
 
 .search__input--para h2 {
-  font-size: 48px;
+  font-size: 54px;
   margin: 12px;
 }
 
@@ -87,7 +71,7 @@
     background-image: url("https://wallpaperboat.com/wp-content/uploads/2019/04/rick-and-morty-wallpaper-portal-wallpaper-007.jpg");
   }
   40% {
-    background-image: url("https://images.hdqwalls.com/wallpapers/bthumb/rick-and-morty-uy.jpg");
+    background-image: url("https://cdn.mos.cms.futurecdn.net/P6C3VzeWSrEhpcSTAESaWc.jpg");
   }
   60% {
     background-image: url("https://bloody-disgusting.com/wp-content/uploads/2015/11/119091-rick-and-morty-rick-and-morty.jpg");
@@ -99,3 +83,5 @@
     background-image: url("https://sm.ign.com/ign_ap/review/r/rick-and-m/rick-and-morty-season-5-premiere-mort-dinner-rick-andre-revi_kqg5.jpg");
   }
 }
+
+

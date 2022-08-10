@@ -1,6 +1,6 @@
 import React from "react";
+import Input from "../components/Input";
 import "./search.css";
-import SearchIcon from "@mui/icons-material/Search";
 
 const Search = () => {
   return (
@@ -15,13 +15,7 @@ const Search = () => {
                 and much more!
               </h3>
             </div>
-            <div className="search__input">
-              <input
-                type="text"
-                placeholder="Rick Sanchez, Human, C137"
-              />
-              <SearchIcon />
-            </div>
+                <Input />
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import React from "react";
 import "./intro.css";
 import title from "../assets/Name.jpg"
 
+
 const IntroPage = () => {
   return (
     <div id="IntroPage">

@@ -1,8 +1,9 @@
 import React from 'react';
 import Nav from './components/Nav';
-import Search from './components/Search';
+import Search from './pages/Search';
 import Intro from './pages/Intro';
 import About from './pages/About';
+import Footer from './components/Footer';
 
 const Main = () => {
     return (
@@ -11,6 +12,7 @@ const Main = () => {
         <Intro />
         <Search />
         <About />
+        <Footer />
         </>
         
     );

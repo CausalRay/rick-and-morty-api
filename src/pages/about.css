@@ -1,9 +1,16 @@
 #About {
     background-color: rgb(235, 217, 217);
-    height: 70vh;
+    height: 80vh;
     position: relative;
+    overflow:hidden;
 }
 
+.about__para {
+    word-spacing: 1.5px;
+    line-height: 1.8rem;
+    font-size:24px;
+    text-align: unset;
+}
 
 .about__container {
     padding-top: 50px;
@@ -15,7 +22,60 @@
 }
 
 .about__wrapper--left {
-    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    flex:0.4;
+    margin-right: 30px;
+
+}
+
+.about__wrapper--right {
+    flex:0.4;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0 20px;
+    transform: translateX(-20%);
+}
+
+.about__wrapper--description p {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hidden__modal{
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: antiquewhite;
+    border-radius: 48px;
+    padding: 20px 40px 40px 40px;
+    box-shadow: 10px 20px 30px gray;
+    transform: translateY(100%);
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 300ms, transform 300ms ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden__modal.popup {
+   opacity: 1;
+    transform: translateY(0%) ;
+}
+
+.cancel {
+    position: absolute;
+    top: -5%; 
+    right: -90%;
+    font-size: 36px;
+}
+
+.description__wrapper {
+    text-align: center;
 }
 
 .about__wrapper--img {
@@ -26,17 +86,33 @@
 
 }
 
-.about__wrapper--right {
-    border:none;
+.rotator {
+    margin-top: 60px;
     height: 350px;
     width: 350px;
-    position: absolute;
-    bottom: 30%;
-    right: 15%;
     border-radius: 999px;
     animation: orbit 25000ms linear infinite;
-
 }
+
+.rotator__wrapper {
+    transform: translateX(70px);
+}
+
+ h2, p
+ {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+p
+{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+
+
+
 
 @keyframes orbit{
     
@@ -93,4 +169,10 @@
 .jerry,
 .beth {
     position: absolute;
+    cursor:pointer;
+}
+
+
+.description__para {
+    text-align: left;
 }
