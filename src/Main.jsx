@@ -8,7 +8,17 @@ import Footer from './components/Footer';
 const Main = () => {
     return (
         <>
-        <Nav />
+        <Nav 
+        firstTo="#IntroPage" 
+        firstText="Home"
+
+       secondTo="#About" 
+       secondText="About"
+
+        thirdTo="#SearchPage" 
+        thirdText="Search"
+        
+        />
         <Intro />
         <Search />
         <About />

@@ -7,6 +7,7 @@ const Search = () => {
     <div id="SearchPage">
       <div className="search__container">
         <div className="row">
+
           <div className="search__input--wrapper">
             <div className="search__input--para">
               <h2 className="schwifty">Find Your Favourite Rick And Morty Character</h2>

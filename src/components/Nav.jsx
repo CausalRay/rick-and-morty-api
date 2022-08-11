@@ -4,7 +4,7 @@ import Logo from "../assets/RT logo.png";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
-const Nav = () => {
+const Nav = (props) => {
   return (
     <nav className="nav">
       <div className="container">
@@ -14,14 +14,14 @@ const Nav = () => {
 
             <div className="nav__wrapper--links">
               <div className="nav__wrapper--links">
-                <HashLink className="link" to="#IntroPage">
-                  Home
+                <HashLink className="link" to={props.firstTo}>
+                {props.firstText}
                 </HashLink>
-                <HashLink className="link" to="#About" smooth>
-                  About
+                <HashLink className="link" to={props.secondTo} smooth>
+                  {props.secondText}
                 </HashLink>
-                <HashLink className="link" to="#SearchPage" smooth>
-                  Search
+                <HashLink className="link" to={props.thirdTo} smooth>
+                  {props.thirdText}
                 </HashLink>
               </div>
             </div>
