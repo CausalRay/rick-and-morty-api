@@ -2,24 +2,43 @@ import React, { useState } from 'react';
 import "./input.css"
 import SearchIcon from "@mui/icons-material/Search";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-
+import axios from 'axios';
+// https://rickandmortyapi.com/api/character/?name={searchValue}
 
 const Input = () => {
   const [searchValue, setSearchValue] = useState()
   const [load, setLoad] = useState(false)
   
+
+
   function handleClick() {
     handleSearch()
   }
 
+
+
   function handleSearch() {
-    searchValue ? searchValue.length > 0 && console.log("insert axios fn") : console.log("insert try again fn")
+    // insert empty string error handling
+    searchValue && getData()
+  }  
+
+
+  
+  
+  async function getData() {
+    try {
+    const axiosData = await axios.get(`https://rickandmortyapi.com/api/character/?name=${searchValue.trim()}`)
+    console.log(axiosData.data)
     handleSpinner()
-  }
+
+    }catch(error) {
+      // insert error handling
+      console.log("fail")
+      handleSpinner()
+    }
+}
 
  function handleSpinner(){
-  // insert conditionals here to prevent anyhow-ing triggering load
   setLoad(true)
 }
 
@@ -29,7 +48,7 @@ const Input = () => {
           type="text"
           onKeyUp={(event) => event.key === "Enter" && handleSearch()}
           onChange={(event) => setSearchValue(event.target.value)}
-          placeholder="Rick Sanchez, Human, C137"
+          placeholder="Rick Sanchez"
           value = {searchValue || ""}
         />
         {
