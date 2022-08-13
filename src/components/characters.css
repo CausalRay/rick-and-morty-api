@@ -1,0 +1,22 @@
+.characters {
+    border: black solid;
+    position: relative;
+    width:20%;
+}
+
+
+.status {
+    position: absolute;
+    top:0;
+    right:0;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: rgb(12, 218, 12);
+    color: white;
+    font-size: 18px;
+    margin: 5px 5px 0 0 ;
+}
+
+img {
+    width: 100%;
+}

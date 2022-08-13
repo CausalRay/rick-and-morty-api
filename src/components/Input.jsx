@@ -3,38 +3,34 @@ import "./input.css"
 import SearchIcon from "@mui/icons-material/Search";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 // https://rickandmortyapi.com/api/character/?name={searchValue}
 
 const Input = () => {
   const [searchValue, setSearchValue] = useState()
   const [load, setLoad] = useState(false)
+  const [err, setErr] = useState(false)
+  const navigate = useNavigate()
   
-
 
   function handleClick() {
     handleSearch()
   }
 
-
-
   function handleSearch() {
-    // insert empty string error handling
     searchValue && getData()
   }  
 
-
-  
-  
   async function getData() {
     try {
     const axiosData = await axios.get(`https://rickandmortyapi.com/api/character/?name=${searchValue.trim()}`)
-    console.log(axiosData.data)
+    setErr(false)
     handleSpinner()
+    navigate("/Results", {replace: false})  
+    
 
     }catch(error) {
-      // insert error handling
-      console.log("fail")
-      handleSpinner()
+      setErr(true)
     }
 }
 
@@ -56,6 +52,10 @@ const Input = () => {
           <FontAwesomeIcon icon="fa-solid fa-spinner" />
           :
           <SearchIcon onClick={() => handleClick()}/>
+        }
+
+        {
+          err && <div className='error__text schwifty'> Please try again! </div>
         }
       </div>
     );

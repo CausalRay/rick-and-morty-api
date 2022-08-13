@@ -1,7 +1,6 @@
 import React from "react";
 import "./nav.css";
 import Logo from "../assets/RT logo.png";
-import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 const Nav = (props) => {
@@ -14,9 +13,18 @@ const Nav = (props) => {
 
             <div className="nav__wrapper--links">
               <div className="nav__wrapper--links">
+
+              <HashLink className="link" to="/">
+                Home
+                </HashLink>
+
+              {
+                props.firstTo &&
                 <HashLink className="link" to={props.firstTo}>
                 {props.firstText}
                 </HashLink>
+              }
+              
                 <HashLink className="link" to={props.secondTo} smooth>
                   {props.secondText}
                 </HashLink>

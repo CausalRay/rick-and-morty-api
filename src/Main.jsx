@@ -9,8 +9,6 @@ const Main = () => {
     return (
         <>
         <Nav 
-        firstTo="#IntroPage" 
-        firstText="Home"
 
        secondTo="#About" 
        secondText="About"

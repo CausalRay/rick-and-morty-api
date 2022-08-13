@@ -19,6 +19,8 @@ const Results = () => {
                    thirdText="location"
                    
            />
+           
+
            <Filter />
            <Footer />
         </>
