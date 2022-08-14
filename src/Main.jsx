@@ -10,6 +10,7 @@ const Main = () => {
         <>
         <Nav 
 
+
        secondTo="#About" 
        secondText="About"
 

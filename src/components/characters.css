@@ -1,7 +1,16 @@
 .characters {
     border: black solid;
+    border-radius: 12px;
+    overflow: hidden;
     position: relative;
-    width:20%;
+    width:28%;
+}
+
+.character__description {
+    padding: 12px;
+    font-size: 20px;
+    font-weight: 900;
+
 }
 
 

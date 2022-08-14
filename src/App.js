@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Results from './Results';
+import Filter from './Filter';
 import Main from './Main';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
 
         <Routes>
         
-          <Route path="/Results" element={<Results/>} />
+          <Route path="/Filter" element={<Filter/>} />
           <Route path="/" element={<Main />} />
         </Routes>
       </div>

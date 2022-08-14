@@ -13,6 +13,12 @@
     margin: 100px;
   }
 
+  .new__err {
+    position: absolute;
+    top:23%;
+    right: 42%;
+  }
+
   .error__text {
     position: absolute;
     bottom: -15%;

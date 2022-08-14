@@ -1,11 +1,23 @@
 .data__wrapper {
     display: flex;
-    justify-content: space-between;
-    margin-top: 12px;
+    justify-content: space-around;
+    height: auto;
+    flex-wrap: wrap;
+    flex:0.8;
 }
 
 .datalist {
     width: 100%;
+}
+
+.data__list--container {
+    display: flex;
+    margin-top: 12px;
+}
+
+.sorter__wrapper{
+   flex:0.2;
+    height: 100%;
 }
 
 .container {

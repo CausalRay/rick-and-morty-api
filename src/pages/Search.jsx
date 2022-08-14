@@ -3,6 +3,7 @@ import Input from "../components/Input";
 import "./search.css";
 
 const Search = () => {
+  
   return (
     <div id="SearchPage">
       <div className="search__container">

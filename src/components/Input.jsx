@@ -1,64 +1,68 @@
-import React, { useState } from 'react';
-import "./input.css"
+import React, { useState } from "react";
+import "./input.css";
 import SearchIcon from "@mui/icons-material/Search";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 // https://rickandmortyapi.com/api/character/?name={searchValue}
 
-const Input = () => {
-  const [searchValue, setSearchValue] = useState()
-  const [load, setLoad] = useState(false)
-  const [err, setErr] = useState(false)
-  const navigate = useNavigate()
-  
+const Input = (props) => {
+  const [searchValue, setSearchValue] = useState();
+  const [load, setLoad] = useState(false);
+  const [err, setErr] = useState(false);
+  const navigate = useNavigate();
 
   function handleClick() {
-    handleSearch()
+    handleSearch();
   }
 
   function handleSearch() {
-    searchValue && getData()
-  }  
+    searchValue && getData();
+  }
 
   async function getData() {
     try {
-    const axiosData = await axios.get(`https://rickandmortyapi.com/api/character/?name=${searchValue.trim()}`)
-    setErr(false)
-    handleSpinner()
-    navigate("/Results", {replace: false})  
-    
+      const axiosData = await axios.get(
+        `https://rickandmortyapi.com/api/character/?name=${searchValue.trim()}`
+      );
+      setErr(false);
+      handleSpinner();
+      navigate("/Filter", { replace: false });
 
-    }catch(error) {
-      setErr(true)
+    } catch (error) {
+      handleSpinner();
+      setErr(true);
     }
-}
+  }
 
- function handleSpinner(){
-  setLoad(true)
-}
+  function handleSpinner() {
+    setLoad(true);
+  }
 
-    return (
-        <div className="input">
-        <input
-          type="text"
-          onKeyUp={(event) => event.key === "Enter" && handleSearch()}
-          onChange={(event) => setSearchValue(event.target.value)}
-          placeholder="Rick Sanchez"
-          value = {searchValue || ""}
-        />
+  return (
+    <div className="input">
+      <input
+        type="text"
+        onKeyUp={(event) => event.key === "Enter" && handleSearch()}
+        onChange={(event) => setSearchValue(event.target.value)}
+        placeholder="Rick Sanchez"
+        value={searchValue || ""}
+      />
+      {load ? (
+        <FontAwesomeIcon icon="fa-solid fa-spinner" />
+      ) : (
+        <SearchIcon onClick={() => handleClick()} />
+      )}
+
+
         {
-          load ? 
-          <FontAwesomeIcon icon="fa-solid fa-spinner" />
+          { props } ? err && <div className="new__err schwifty"> Please try again! </div>
           :
-          <SearchIcon onClick={() => handleClick()}/>
+          err  && <div className="error__text schwifty"> Please try again! </div>
         }
-
-        {
-          err && <div className='error__text schwifty'> Please try again! </div>
-        }
-      </div>
-    );
-}
+      
+    </div>
+  );
+};
 
 export default Input;
