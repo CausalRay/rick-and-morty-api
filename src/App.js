@@ -10,7 +10,7 @@ function App() {
 
         <Routes>
         
-          <Route path="/Filter" element={<Filter/>} />
+          <Route path=":id" element={<Filter/>} />
           <Route path="/" element={<Main />} />
         </Routes>
       </div>

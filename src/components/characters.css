@@ -4,6 +4,7 @@
     overflow: hidden;
     position: relative;
     width:28%;
+    margin-bottom: 40px;
 }
 
 .character__description {
@@ -28,4 +29,22 @@
 
 img {
     width: 100%;
+}
+
+.skeleton__status {
+    background-color: rgb(193, 181, 181);
+    color: rgb(193, 181, 181);
+}
+
+.skeleton__image {
+    background: rgb(240, 226, 226);
+    width: 297.734px;
+    height: 297.734px;
+}
+
+.skeleton__name,
+.skeleton__species,
+.skeleton__last--seen {
+    color:rgb(193, 181, 181);
+    background-color: rgb(193, 181, 181);
 }

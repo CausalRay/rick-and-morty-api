@@ -27,7 +27,7 @@ const Input = (props) => {
       );
       setErr(false);
       handleSpinner();
-      navigate("/Filter", { replace: false });
+      navigate(`${searchValue.trim()}` , { replace: false });
 
     } catch (error) {
       handleSpinner();

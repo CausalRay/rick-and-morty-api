@@ -1,113 +1,66 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import "./characters.css"
 
+// status color, skeleton loading, search bar
+// sorter
+// more info, related results
+// nav bar links 
+
+
+
+
 const Characters = () => {
+    const [load, setLoad] = useState() 
+    const [char, setChar] = useState([]) 
+    const {id} = useParams()
+
+     
+    useEffect(()=> {
+        async function fetchPost() {
+            const {data} = await axios.get(`https://rickandmortyapi.com/api/character/?name=${id}`)
+            setChar(data.results)
+        }
+
+        fetchPost()
+        setLoad(false)
+    }, [])
     return (
         <>
-        <div className='characters'> 
-            <span className='status'>Alive</span>
-            <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="" />
-            <div className="character__description">
-                <div className="char__name">Rick</div>
-                <div className="species">Human</div>
-                <div className="last__seen">Last Seen: Earth</div>
+
+        { load ? 
+        new Array(9).fill(0).map((_, index) => (
+            <div key={index} className='skeleton__state characters '> 
+            <span className='status skeleton__status'>Alive</span>
+            <div className="skeleton__image"></div>
+            <div className="character__description skeleton_description">
+                <div className="char__name skeleton__name">Rick</div>
+                <div className="species skeleton__species">Human</div>
+                <div className="last__seen skeleton__last--seen">Last Seen: Earth</div>
 
             </div>
         </div>
+        ))
 
-        <div className='characters'> 
-            <span className='status'>Alive</span>
-            <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="" />
+         
+         :
+
+         char.slice(0,9).map((user, index) => (
+            <div key={index} className='characters'> 
+            <span className='status'>{user.status}</span>
+            <img src={user.image} alt="" />
             <div className="character__description">
-                <div className="char__name">Rick</div>
-                <div className="species">Human</div>
-                <div className="last__seen">Last Seen: Earth</div>
-                
-
+                <div className="char__name">{user.name}</div>
+                <div className="species">{user.species}</div>
+                <div className="last__seen">Last Seen: {user.location.name}</div>
+   
             </div>
         </div>
-
-        <div className='characters'> 
-            <span className='status'>Alive</span>
-            <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="" />
-            <div className="character__description">
-                <div className="char__name">Rick</div>
-                <div className="species">Human</div>
-                <div className="last__seen">Last Seen: Earth</div>
-
-            </div>
-        </div>
-
-        <div className='characters'> 
-            <span className='status'>Alive</span>
-            <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="" />
-            <div className="character__description">
-                <div className="char__name">Rick</div>
-                <div className="species">Human</div>
-                <div className="last__seen">Last Seen: Earth</div>
-
-            </div>
-        </div>
-
-        <div className='characters'> 
-            <span className='status'>Alive</span>
-            <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="" />
-            <div className="character__description">
-                <div className="char__name">Rick</div>
-                <div className="species">Human</div>
-                <div className="last__seen">Last Seen: Earth</div>
-
-            </div>
-        </div>
-
-        <div className='characters'> 
-            <span className='status'>Alive</span>
-            <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="" />
-            <div className="character__description">
-                <div className="char__name">Rick</div>
-                <div className="species">Human</div>
-                <div className="last__seen">Last Seen: Earth</div>
-
-            </div>
-        </div>
-
-        <div className='characters'> 
-            <span className='status'>Alive</span>
-            <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="" />
-            <div className="character__description">
-                <div className="char__name">Rick</div>
-                <div className="species">Human</div>
-                <div className="last__seen">Last Seen: Earth</div>
-
-            </div>
-        </div>
-
-        <div className='characters'> 
-            <span className='status'>Alive</span>
-            <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="" />
-            <div className="character__description">
-                <div className="char__name">Rick</div>
-                <div className="species">Human</div>
-                <div className="last__seen">Last Seen: Earth</div>
-
-            </div>
-        </div>
-
-        <div className='characters'> 
-            <span className='status'>Alive</span>
-            <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="" />
-            <div className="character__description">
-                <div className="char__name">Rick</div>
-                <div className="species">Human</div>
-                <div className="last__seen">Last Seen: Earth</div>
-
-            </div>
-        </div>
-
-        
-
-        
-        </>
+        ))
+         
+    }
+</>
 
         
     );
