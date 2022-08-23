@@ -1,4 +1,5 @@
 .input {
+   position: relative;
     display: flex;
     margin: 30px 0;
     border: none;
@@ -13,20 +14,14 @@
     margin: 100px;
   }
 
-  .new__err {
-    position: absolute;
-    top:23%;
-    right: 42%;
-  }
-
   .error__text {
+    font-size: 40px;
     position: absolute;
-    bottom: -15%;
-    right:35%;
-    font-size: 50px;
+    transform: translate(60%, 150%);
   }
 
   .input input {
+    
     width: 600px;
     min-width: 400px;
     outline: none;

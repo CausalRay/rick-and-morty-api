@@ -1,69 +1,60 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import "./characters.css"
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import "./characters.css";
 
 // status color, skeleton loading, search bar
 // sorter
 // more info, related results
-// nav bar links 
-
-
-
+// nav bar links
 
 const Characters = () => {
-    const [load, setLoad] = useState() 
-    const [char, setChar] = useState([]) 
-    const {id} = useParams()
+  const [load, setLoad] = useState(false);
+  const [char, setChar] = useState([]);
+  const { id } = useParams();
 
-     
-    useEffect(()=> {
-        async function fetchPost() {
-            const {data} = await axios.get(`https://rickandmortyapi.com/api/character/?name=${id}`)
-            setChar(data.results)
-        }
+  useEffect(() => {
+    async function fetchPost() {
+      const { data } = await axios.get(
+        `https://rickandmortyapi.com/api/character/?name=${id}`
+      );
+      setChar(data.results);
+    }
 
-        fetchPost()
-        setLoad(false)
-    }, [])
-    return (
-        <>
-
-        { load ? 
-        new Array(9).fill(0).map((_, index) => (
-            <div key={index} className='skeleton__state characters '> 
-            <span className='status skeleton__status'>Alive</span>
-            <div className="skeleton__image"></div>
-            <div className="character__description skeleton_description">
+    fetchPost();
+    setLoad(true);
+  }, []);
+  return (
+    <>
+      {load
+        ? new Array(12).fill(0).map((_, index) => (
+            <div key={index} className="skeleton__state characters ">
+              <span className="status skeleton__status">Alive</span>
+              <div className="skeleton__image"></div>
+              <div className="character__description skeleton_description">
                 <div className="char__name skeleton__name">Rick</div>
                 <div className="species skeleton__species">Human</div>
-                <div className="last__seen skeleton__last--seen">Last Seen: Earth</div>
-
+                <div className="last__seen skeleton__last--seen">
+                  Last Seen: Earth
+                </div>
+              </div>
             </div>
-        </div>
-        ))
-
-         
-         :
-
-         char.slice(0,9).map((user, index) => (
-            <div key={index} className='characters'> 
-            <span className='status'>{user.status}</span>
-            <img src={user.image} alt="" />
-            <div className="character__description">
+          ))
+        : char.slice(0, 12).map((user, index) => (
+            <div key={index} className="characters">
+              <span className="status">{user.status}</span>
+              <img src={user.image} alt="" />
+              <div className="character__description">
                 <div className="char__name">{user.name}</div>
                 <div className="species">{user.species}</div>
-                <div className="last__seen">Last Seen: {user.location.name}</div>
-   
+                <div className="last__seen">
+                  Last Seen: {user.location.name}
+                </div>
+              </div>
             </div>
-        </div>
-        ))
-         
-    }
-</>
-
-        
-    );
-}
+          ))}
+    </>
+  );
+};
 
 export default Characters;
