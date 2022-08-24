@@ -3,13 +3,13 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./characters.css";
 
-// status color, skeleton loading, search bar
+// status color
 // sorter
 // more info, related results
 // nav bar links
 
 const Characters = () => {
-  const [load, setLoad] = useState(false);
+  const [load, setLoad] = useState(true);
   const [char, setChar] = useState([]);
   const { id } = useParams();
 
@@ -21,9 +21,15 @@ const Characters = () => {
       setChar(data.results);
     }
 
-    fetchPost();
-    setLoad(true);
+
+    const timer = setTimeout(() => {
+      fetchPost();
+      setLoad(false);
+    }, 300);
+
   }, []);
+
+
   return (
     <>
       {load
@@ -41,15 +47,11 @@ const Characters = () => {
             </div>
           ))
         : char.slice(0, 12).map((user, index) => (
-            <div key={index} className="characters">
+            <div key={index} id="characters" onClick={()=> window.location.href = `characterId/${user.id}`}>
               <span className="status">{user.status}</span>
               <img src={user.image} alt="" />
               <div className="character__description">
                 <div className="char__name">{user.name}</div>
-                <div className="species">{user.species}</div>
-                <div className="last__seen">
-                  Last Seen: {user.location.name}
-                </div>
               </div>
             </div>
           ))}

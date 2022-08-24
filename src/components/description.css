@@ -1,0 +1,22 @@
+.info__icon {
+    width: 45px !important;
+    height: 45px !important;
+}
+
+.info__name {
+    font-size: 50px;
+    margin-top: 16px;
+    padding-bottom: 30px;
+}
+
+.info__icon--wrapper {
+    display: flex;
+    align-items: center;
+    margin: 14px 0;
+    color: rgb(71, 57, 57);
+}
+
+.MuiSvgIcon-root {
+    margin-right: 20px; 
+    color: rgb(47, 44, 44);
+}

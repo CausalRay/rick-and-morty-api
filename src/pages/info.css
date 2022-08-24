@@ -1,0 +1,37 @@
+.info {
+    background:linear-gradient(
+    to bottom, 
+    white 0%,
+    white 50%,
+    paleturquoise 50%, 
+    paleturquoise 100%);
+    
+    padding-top: 80px;
+    height: 100vh;
+
+}
+
+.info__wallpaper {
+    height: 500px;
+    width: 400px;
+    margin: 32px;
+}
+
+.info__wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+}
+
+.info__description {
+    margin: 32px 32px 32px 60px;
+    text-align: left;
+    font-size: 28px;
+    line-height: 1.8rem;
+    font-weight: 700;
+    word-spacing: 1.8px;
+}
+
+.info__description--wrapper {
+    display: flex;
+}

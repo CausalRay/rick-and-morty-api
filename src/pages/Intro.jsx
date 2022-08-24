@@ -1,7 +1,6 @@
 import React from "react";
 import "./intro.css";
-import title from "../assets/Name.jpg"
-
+import title from "../assets/Name.jpg";
 
 const IntroPage = () => {
   return (
@@ -14,9 +13,9 @@ const IntroPage = () => {
             </div>
             <div className="intropage__para">
               Come meet all 826 characters from popular animated show, Rick And
-              *BUUUUUURRRRRPPPPPP* Morty with this Search Engine. So what are
-              you waiting for? Start diving into the Rick And Morty universe
-              before the Federation catches you!
+              Morty with this Search Engine. So what are you waiting for? Start
+              diving into the Rick And Morty universe before the Federation
+              catches you!
             </div>
           </div>
         </div>

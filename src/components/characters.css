@@ -1,3 +1,4 @@
+#characters, 
 .characters {
     border: black solid;
     border-radius: 12px;
@@ -5,13 +6,18 @@
     position: relative;
     width:28%;
     margin-bottom: 40px;
+    cursor: pointer;
+    transition: all 250ms ease;
+}
+
+#characters:hover {
+    transform: scale(0.9);
 }
 
 .character__description {
     padding: 12px;
     font-size: 20px;
     font-weight: 900;
-
 }
 
 
@@ -31,6 +37,10 @@ img {
     width: 100%;
 }
 
+.skeleton__state {
+    border: none;
+}
+
 .skeleton__status {
     background-color: rgb(193, 181, 181);
     color: rgb(193, 181, 181);
@@ -47,4 +57,8 @@ img {
 .skeleton__last--seen {
     color:rgb(193, 181, 181);
     background-color: rgb(193, 181, 181);
+}
+
+.char__name {
+    text-align: center;
 }

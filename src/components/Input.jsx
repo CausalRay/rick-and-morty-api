@@ -3,15 +3,11 @@ import "./input.css";
 import SearchIcon from "@mui/icons-material/Search";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
-// https://rickandmortyapi.com/api/character/?name={searchValue}
 
 const Input = () => {
   const [searchValue, setSearchValue] = useState();
   const [load, setLoad] = useState(false);
   const [err, setErr] = useState(false);
-  const navigate = useNavigate();
 
   function handleClick() {
     handleSearch();
@@ -20,8 +16,6 @@ const Input = () => {
   function handleSearch() {
     searchValue && getData();
   }
-
-
 
   async function getData() {
     handleSpinner()

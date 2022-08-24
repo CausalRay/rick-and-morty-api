@@ -35,6 +35,7 @@
     0px 0px 2px #b1fd00cd,0px 0px 2px #b1fd00cd;
     text-decoration: none;
     transition: hover 250ms ease;
+    cursor: pointer;
 }
 
 .link:hover {
