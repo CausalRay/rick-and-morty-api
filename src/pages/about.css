@@ -67,11 +67,16 @@
     transform: translateY(0%) ;
 }
 
+.about__cancel--icon {
+    width: 40px !important;
+    height: 40px !important;
+}
+
 .cancel {
     position: absolute;
     top: -5%; 
     right: -90%;
-    font-size: 36px;
+
 }
 
 .description__wrapper {

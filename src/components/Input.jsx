@@ -48,7 +48,7 @@ const Input = () => {
       {load ? (
         <FontAwesomeIcon icon="fa-solid fa-spinner" />
       ) : (
-        <SearchIcon onClick={() => handleClick()} />
+        <SearchIcon className="input__search--icon" onClick={() => handleClick()} />
       )}
 
 

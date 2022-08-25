@@ -3,25 +3,32 @@ import React, { useEffect, useState } from "react";
 import "./info.css";
 import Description from "../components/Description";
 
-//https://rickandmortyapi.com/api/character/{charId}
+//https://rickandmortyapi.com/api/character/${props.characterId}
 
 // State issues > Usestate([]) is occuring first, useeffect second. 
 //skeleton loading
 
 const Info = (props) => {
+  const [charData, setCharData] = useState([])
+  const [test, setTest] = useState([])
   
   useEffect(() => {
-    async function fetchinfo() {
+    async function fetchData() {
       const {data} = await axios.get(`https://rickandmortyapi.com/api/character/${props.characterId}`)
       setCharData(data)
-      console.log(charData)
     }
-    
-    fetchinfo();
-    
-  }, []);
+
+    fetchData()
+  },[]);
+
+  useEffect(()=> {
+    if(charData.length > 0) {
+      setTest(charData)
+      console.log(test)
+    }
+  }, [charData])
+
   
-  const [charData, setCharData] = useState([])
   
   return (
     <div className="info">
@@ -33,8 +40,7 @@ const Info = (props) => {
 
               <div className="info__description">
 
-                 
-                {/* { 
+                {/* {
                   charData.map((element, index)=> (
                   <Description key={index}
                 name= {element.name}

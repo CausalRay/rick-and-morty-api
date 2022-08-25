@@ -31,7 +31,7 @@
     color: gray;
   }
 
-  .MuiSvgIcon-root,
+  .input__search--icon,
   .fa-spinner {
     cursor: pointer;
     width: 40px !important;

@@ -16,7 +16,7 @@
     color: rgb(71, 57, 57);
 }
 
-.MuiSvgIcon-root {
+.icon__name .MuiSvgIcon-root {
     margin-right: 20px; 
     color: rgb(47, 44, 44);
 }

@@ -141,7 +141,7 @@ const About = () => {
                 >
                   <div className="cancel__wrapper">
                     <IconButton className="cancel" onClick={() => handleExit()}>
-                      <CloseIcon />
+                      <CloseIcon className="about__cancel--icon"/>
                     </IconButton>
                   </div>
 
