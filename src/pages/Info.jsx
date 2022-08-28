@@ -1,35 +1,37 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./info.css";
 import Description from "../components/Description";
 
 //https://rickandmortyapi.com/api/character/${props.characterId}
 
-// State issues > Usestate([]) is occuring first, useeffect second. 
+//Filter ID from page 1, if dont have go to next page, etc...
+// Then map the correct data 
 //skeleton loading
 
 const Info = (props) => {
-  const [charData, setCharData] = useState([])
-  const [test, setTest] = useState([])
+  const [charData, setCharData] = useState()
+  const testRef = useRef(false)
+  const number = 1
+
   
-  useEffect(() => {
-    async function fetchData() {
-      const {data} = await axios.get(`https://rickandmortyapi.com/api/character/${props.characterId}`)
-      setCharData(data)
-    }
-
-    fetchData()
-  },[]);
-
   useEffect(()=> {
-    if(charData.length > 0) {
-      setTest(charData)
-      console.log(test)
+    if (useRef.current) {
+      async function fetchData() {
+            const {data} = await axios.get(`https://rickandmortyapi.com/api/character/?page=${number}`)
+            setCharData(data)
+            console.log(charData)
+            
+          }
+          fetchData()
+    } 
+    else {
+      useRef.current = true
     }
-  }, [charData])
+  }, [useRef.current])
 
-  
-  
+
+
   return (
     <div className="info">
       <div className="container">
@@ -39,9 +41,11 @@ const Info = (props) => {
               <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" className="info__wallpaper" alt="" />
 
               <div className="info__description">
-
-                {/* {
-                  charData.map((element, index)=> (
+  
+             {/* {     
+             charData &&
+             charData.filter((element) => element.id === props.characterId)
+             .map((element, index)=> (
                   <Description key={index}
                 name= {element.name}
                 status= {element.status}
@@ -52,8 +56,9 @@ const Info = (props) => {
                 last_seen={element.location.name}
                 dimension="Dimension C-137"
                 />
-                  ))
-                } */}
+                ))
+              } */}
+
                 
               </div>
             </div>
