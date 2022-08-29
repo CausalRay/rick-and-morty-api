@@ -47,7 +47,7 @@ const Characters = () => {
             </div>
           ))
         : char.slice(0, 12).map((user, index) => (
-            <div key={index} id="characters" onClick={()=> window.location.href = `characterId/${user.id}`}>
+            <div key={index} id="characters" onClick={()=> window.location.href = `characterId/${user.name}`}>
               <span className="status">{user.status}</span>
               <img src={user.image} alt="" />
               <div className="character__description">

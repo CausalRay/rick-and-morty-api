@@ -15,7 +15,21 @@ const Description = (props) => {
                 
                 <div className="info__icon--wrapper">
                 <MonitorHeartIcon className="info__icon"/>
-                <div className="info__status ">{props.status}</div>
+                
+                {(()=> {
+                    if(props.status === "Dead"){
+                        return (
+                            <div className="info__status ">{props.status}</div>
+                        )
+                    }
+                    else if(props.status === "Alive") {
+                        <div className="info__status ">{props.status}</div>
+                    }
+                    else {
+                        <div className="info__status ">{props.status}</div>
+                    }
+                })()}
+                
                 </div>
 
                 <div className="info__icon--wrapper">

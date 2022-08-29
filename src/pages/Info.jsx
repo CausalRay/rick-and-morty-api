@@ -10,25 +10,24 @@ import Description from "../components/Description";
 //skeleton loading
 
 const Info = (props) => {
-  const [charData, setCharData] = useState()
+  const [charData, setCharData] = useState([])
+  const [pageNumber, setPageNumber] = useState(1)
   const testRef = useRef(false)
-  const number = 1
-
+  let {info, results} = charData
   
+  console.log(props.charId)
+  console.log(results)
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${props.charId}`
+
   useEffect(()=> {
-    if (useRef.current) {
-      async function fetchData() {
-            const {data} = await axios.get(`https://rickandmortyapi.com/api/character/?page=${number}`)
+     
+      (async function () {
+            let data = await fetch(api).then((res)=> res.json())
             setCharData(data)
-            console.log(charData)
             
-          }
-          fetchData()
-    } 
-    else {
-      useRef.current = true
-    }
-  }, [useRef.current])
+          })()
+        }, [api])
+        
 
 
 
@@ -42,10 +41,9 @@ const Info = (props) => {
 
               <div className="info__description">
   
-             {/* {     
-             charData &&
-             charData.filter((element) => element.id === props.characterId)
-             .map((element, index)=> (
+             {     
+             results && 
+             results.map((element, index)=> (
                   <Description key={index}
                 name= {element.name}
                 status= {element.status}
@@ -56,8 +54,8 @@ const Info = (props) => {
                 last_seen={element.location.name}
                 dimension="Dimension C-137"
                 />
-                ))
-              } */}
+                )) 
+              }
 
                 
               </div>

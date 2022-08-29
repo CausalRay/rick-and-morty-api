@@ -10,6 +10,7 @@ import { useParams } from 'react-router-dom';
 
 const CharacterInfo = () => {
     const {charId} = useParams()
+    
     return (
         <>
             <Nav 
@@ -19,7 +20,7 @@ const CharacterInfo = () => {
             />
             
             <Info 
-            characterId={charId}/>
+            charId={charId}/>
             <Footer />
         </>
     );
