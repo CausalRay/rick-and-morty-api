@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState, useRef } from "react";
 import "./info.css";
 import Description from "../components/Description";
+import Image from "../components/Image";
 
 //https://rickandmortyapi.com/api/character/${props.characterId}
 
@@ -12,11 +13,8 @@ import Description from "../components/Description";
 const Info = (props) => {
   const [charData, setCharData] = useState([])
   const [pageNumber, setPageNumber] = useState(1)
-  const testRef = useRef(false)
-  let {info, results} = charData
+  let {results} = charData
   
-  console.log(props.charId)
-  console.log(results)
   let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${props.charId}`
 
   useEffect(()=> {
@@ -37,25 +35,13 @@ const Info = (props) => {
         <div className="row">
           <div className="info__wrapper">
             <div className="info__description--wrapper">
-              <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" className="info__wallpaper" alt="" />
+              
+              <Image results={results} />
+              
 
               <div className="info__description">
   
-             {     
-             results && 
-             results.map((element, index)=> (
-                  <Description key={index}
-                name= {element.name}
-                status= {element.status}
-                species={element.species}
-                type={element.type}
-                gender= {element.gender}
-                home_planet={element.origin}
-                last_seen={element.location.name}
-                dimension="Dimension C-137"
-                />
-                )) 
-              }
+             <Description results={results}/>
 
                 
               </div>

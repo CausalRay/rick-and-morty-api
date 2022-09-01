@@ -1,8 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useRef } from "react";
 import { useParams } from "react-router-dom";
 import "./characters.css";
+import Description from "./Description";
 
+//Saving Id, state is one click away 
 // status color
 // sorter
 // more info, related results
@@ -11,6 +14,8 @@ import "./characters.css";
 const Characters = () => {
   const [load, setLoad] = useState(true);
   const [char, setChar] = useState([]);
+  const [Id, setId] = useState();
+  const testRef = useRef(0)
   const { id } = useParams();
 
   useEffect(() => {
@@ -21,17 +26,27 @@ const Characters = () => {
       setChar(data.results);
     }
 
-
-    const timer = setTimeout(() => {
+     setTimeout(() => {
       fetchPost();
       setLoad(false);
     }, 300);
 
   }, []);
 
+  function handleClick(user) {
+    window.location.href = `characterId/${user.name}`
+    setId(user.id)
+  }
+
+  useEffect(()=> {
+    console.log(Id)
+  },[Id])
 
   return (
     <>
+
+    <Description Id={Id}/>
+
       {load
         ? new Array(12).fill(0).map((_, index) => (
             <div key={index} className="skeleton__state characters ">
@@ -47,7 +62,7 @@ const Characters = () => {
             </div>
           ))
         : char.slice(0, 12).map((user, index) => (
-            <div key={index} id="characters" onClick={()=> window.location.href = `characterId/${user.name}`}>
+            <div key={index} id="characters" >
               <span className="status">{user.status}</span>
               <img src={user.image} alt="" />
               <div className="character__description">
@@ -55,6 +70,7 @@ const Characters = () => {
               </div>
             </div>
           ))}
+      
     </>
   );
 };

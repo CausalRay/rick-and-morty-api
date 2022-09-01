@@ -10,6 +10,7 @@ import { useParams } from 'react-router-dom';
 
 const CharacterInfo = () => {
     const {charId} = useParams()
+
     
     return (
         <>
